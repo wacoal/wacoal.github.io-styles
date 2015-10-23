@@ -1,0 +1,33 @@
+@charset "utf-8";
+/*********************************************
+* Theme Name : wacoal
+* Theme url  :
+* Description:
+* Auter      : ode
+* varsion    : 2015.05.26
+*********************************************/
+
+//images for css
+//$img-parts  : "../common/minimg/spacer.gif";
+
+@import "common/config";
+
+@import "sass_common/reset";
+@import "sass_js/js-mylazy";
+@import "sass_animation/spinner";
+
+.main {
+display: block;
+}
+.lists {
+display: block;
+}
+.lists__item {
+display: block;
+margin: 180px auto;
+}
+.pic {
+display: block;
+max-width: 100%;
+margin: 0 auto;
+}

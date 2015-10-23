@@ -30,9 +30,9 @@ html {
 body {
 	background: #fcfafb;
 	line-height: 1.4;
-	color: $col-txtBase;
+	color: $c-txtBase;
 	font-family:'Lucida Grande', Meiryo, sans-serif;
-	font-size: $fontsize-base;
+	font-size: $f-base;
 	letter-spacing:1px;
 }
 ol, ul { list-style: none; }
@@ -52,7 +52,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 }
 a {
 	text-decoration: none;
-	color: $col-txtLink;
+	color: $c-txtLink;
 }
 a:hover { text-decoration: none; }
 a img { border: none; }
@@ -68,7 +68,7 @@ input, textarea, select {
 input, textarea, select { *font-size: 100%; }
 */
 textarea {
-	font-size: $fontsize-title;
+	font-size: $f-title;
 }
-legend { color: $col-txtBase; }
+legend { color: $c-txtBase; }
 em { font-weight: bold; }

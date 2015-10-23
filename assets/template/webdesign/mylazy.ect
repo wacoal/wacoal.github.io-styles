@@ -3,22 +3,7 @@ mylazy
 <% end %>
 
 <% block 'css': %>
-<style>
-.main {
-display: block;
-}
-.lists {
-display: block;
-}
-.lists__item {
-display: block;
-margin: 0 auto 360px;
-}
-.pic {
-display: block;
-max-width: 100%;
-}
-</style>
+<link type="text/css" rel="stylesheet" href="/common/css/webdesign_mylazy.css" media="screen" />
 <% end %>
 
 <% extend 'partials/layout.ect' %>
@@ -72,12 +57,12 @@ $(function(){
 
 				var lazy_pic_offset = $(this).offset();
 				var data_pi;
-				
-				if( !$(this).hasClass("is_comp") ){
+
+				if( !$(this).parent().hasClass("is_comp") ){
 					if( lazy_pic_offset.top < window_offset ){
 						data_pic = $(this).data("pic");
 						$(this).attr("src",data_pic);
-						$(this).addClass("is_comp");
+						$(this).parent().addClass("is_comp");
 					}
 					if( lazy_pic_offset.top < window_offset + window_height ){
 						data_pic = $(this).data("pic");
