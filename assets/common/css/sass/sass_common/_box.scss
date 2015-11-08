@@ -1,0 +1,134 @@
+/****************
+
+box
+
+******************/
+
+.wrap-box {
+	position: relative;
+	display: block;
+	padding: 32px 8px;
+	text-align: center;
+	margin: 0 0 24px;
+	//background: $c-white;
+}
+.box {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	max-width: 400px;
+}
+.box-info {
+	position: absolute;
+	z-index: 16;
+	bottom: 16px;
+	right: 5%;
+	display: block;
+	max-width: 80%;
+	padding: 8px;
+	background: rgba(255,255,255,0.9);
+	-webkit-box-shadow: 0 1px 1px 1px $c-border;
+	box-shadow: 0 1px 1px 1px $c-border;
+}
+.box-title {
+	display: block;
+	margin: 0 0 32px;
+	font-size: $f-title;
+	font-weight: bold;
+}
+.box-date {
+	font-size: $f-ss;
+	color: $c-mute;
+}
+.box-category {
+	position:absolute;
+	z-index: 32;
+	top: 12px;
+	left: 12px;
+	display: block;
+	height: 42px;
+	line-height: 42px;
+	padding: 0px;
+	//background: $c-main;
+	white-space: nowrap;
+}
+.box-category__txt {
+	display: block;
+	height: 16px;
+	line-height: 16px;
+	padding: 4px;
+	margin: 7px 0;
+	background: rgba(12,125,116,0.8);
+	color: $c-white;
+	border: solid 1px $c-white;
+}
+.box-pic {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 240px;
+	overflow: hidden;
+	.box-pic__pic,
+	img {
+		display: block;
+		position: absolute;
+		top: -100%;
+		right: -100%;
+		bottom: -100%;
+		left: -100%;
+		width: auto;
+		height: auto;
+		//min-width: 100%;
+		//min-height: 100%;
+		max-width: 100%;
+		max-height: 240px;
+		margin: auto;
+	}
+}
+
+.box.type_blog {
+	.box-info {
+		position: relative;
+		max-width: none;
+		padding: 16px 8px 16px 72px;
+		right: 0;
+		bottom: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		background: none;
+	}
+	.box-title {
+		//display: inline-block;
+		vertical-align: middle;
+		margin: 0 16px 0 0;
+		font-size: $f-title;
+		font-weight: bold;
+		word-wrap: break-word;
+	}
+	.box-category {
+		top: 50%;
+		margin-top: -11px;
+	}
+	.box-pic {
+		position: absolute;
+		z-index: 16;
+		top:50%;
+		left: 72px;
+		width: 50px;
+		height: 50px;
+		margin-top: -25px;
+	}
+	.box-pic + .box-info {
+		padding: 16px 8px 16px 134px;
+	}
+}
+.box-blog {
+	display: none;
+	//height: 240px;
+	//padding: 0 16px;
+}
+/*
+.box-blog:first-letter {
+	font-size: 32px;
+}
+*/
