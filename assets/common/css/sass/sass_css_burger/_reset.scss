@@ -12,7 +12,9 @@ body {
 }
 article {
   display: block;
+  //max-width: 360px;
   padding: 24px 16px 60px;
+  margin: 0 auto;
   background: $c-white;
   h1 {
     display: block;

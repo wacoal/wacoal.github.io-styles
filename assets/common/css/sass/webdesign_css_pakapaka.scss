@@ -1,0 +1,25 @@
+@charset "utf-8";
+/*********************************************
+* Theme Name : wacoal
+* Theme url  :
+* Description:
+* Auter      : ode
+* varsion    : 2015.11.09
+*********************************************/
+
+//images for css
+//$img-parts  : "../common/minimg/spacer.gif";
+
+@import "common/config";
+
+@import "sass_common/reset";
+@import "sass_common/lists";
+
+.wrap-open {
+  margin: 60px 0;
+  border-top: solid 1px $c-border;
+  border-bottom: solid 1px $c-border;
+}
+
+@import "sass_css_pakapaka/btn-open";
+@import "sass_css_pakapaka/open";
