@@ -28,9 +28,9 @@ html {
 	line-height: 1;
 }
 body {
-	background: #fcfafb;
+	background: $c-white;
 	line-height: 1.4;
-	color: $c-txtBase;
+	color: $c-txt;
 	font-family:'Lucida Grande', Meiryo, sans-serif;
 	font-size: $f-base;
 	letter-spacing:1px;
@@ -70,5 +70,5 @@ input, textarea, select { *font-size: 100%; }
 textarea {
 	font-size: $f-title;
 }
-legend { color: $c-txtBase; }
+legend { color: $c-txt; }
 em { font-weight: bold; }

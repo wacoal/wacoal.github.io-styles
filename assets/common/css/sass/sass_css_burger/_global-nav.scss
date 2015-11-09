@@ -1,0 +1,20 @@
+/****************
+global-nav
+******************/
+.global-nav {
+	width: 214px;
+	height: 100%;
+	display: none;
+	background: $c-burger_bg;
+}
+.burger-outer.active {
+	.global-nav {
+		display: block;
+		z-index: -1;
+	}
+}
+.global-nav-inner {
+	display: block;
+	width: 214px;
+	height: 100%;
+}

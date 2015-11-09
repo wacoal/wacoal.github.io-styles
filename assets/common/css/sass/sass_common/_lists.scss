@@ -1,0 +1,46 @@
+/****************
+lists
+******************/
+.lists:after {
+	content: "";
+	display: block;
+	clear: both;
+	width: 100%;
+}
+.lists__item {
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.has_1 {
+	.lists__item {
+		width: 100%;
+	}
+}
+.has_2 {
+	.lists__item {
+		width: 50%;
+	}
+}
+.has_3 {
+	.lists__item {
+		width: 33.33%;
+	}
+}
+.has_4 {
+	.lists__item {
+		width: 25%;
+	}
+}
+.has_5 {
+	.lists__item {
+		width: 20%;
+	}
+}
+.has_6 {
+	.lists__item {
+		width: 16.66%;
+	}
+}

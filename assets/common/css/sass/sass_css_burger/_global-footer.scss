@@ -1,0 +1,15 @@
+/****************
+global-footer
+******************/
+.global-footer {
+	display: block;
+	clear: both;
+	background: $c-burger_bg;
+}
+.copyright {
+	display: block;
+	padding: 4px 0;
+	border-top: solid 1px #2d2a2b;
+	color: $c-mute;
+	text-align: center;
+}
