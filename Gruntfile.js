@@ -136,6 +136,31 @@ module.exports = function(grunt) {
 				dest: "<%= path.deploy %>/common/css/style.css"
 			}
 		},
+		image: {
+			static: {
+				options: {
+					pngquant: true,
+					optipng: false,
+					zopflipng: true,
+					advpng: true,
+					jpegRecompress: false,
+					jpegoptim: true,
+					mozjpeg: true,
+					gifsicle: true,
+					svgo: true
+				},
+				files: {
+				}
+			},
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: '<%= path.deploy %>/common/img/',
+					src: ['**/*.{png,jpg,gif,svg}'],
+					dest: '<%= path.deploy %>/common/minimg/',
+				}]
+			}
+		},
 
 		// Watch
 		watch: {
@@ -154,48 +179,46 @@ module.exports = function(grunt) {
 				files: ["<%= path.resource %>/**/*.ect","<%= path.resource %>/**/**/*.ect"],
 				tasks: ['ect']
 			}
+			images: {
+				cwd: '<%= path.deploy %>/common/img/',
+				files: ['**/*.{png,jpg,gif,svg}'],
+				tasks: ['newer:image']
+			},
 		},
-
-		'gh-pages': {
-      options: {
-        base: 'assets',
-        branch: 'master',
-        repo: 'https://odego@bitbucket.org/odego/grunt_first_kit_1.git',
-        message: 'Auto-generated commit by grunt-gh-pages'
-      },
-      src: ['**']
-    },
-    gitpush: {
-      src: {
-        options: {
-          branch: 'master'
-        }
-      }
-    }
 
 	});
 
 	//使うプラグインの読み込み
 	var taskName;
 
+	/*
+	var taskName;
 	for(taskName in pkg.devDependencies) {
 		if(taskName.substring(0, 6) == 'grunt-') {
 			grunt.loadNpmTasks(taskName);
 		}
 	}
+	*/
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-ect');
+	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-open');
+	grunt.loadNpmTasks('grunt-image');
+	grunt.loadNpmTasks('grunt-newer');
 
-	//grunt.loadNpmTasks('grunt-ect');
-
+	grunt.task.loadNpmTasks('assemble');
+	// assemble(a) タスクコマンド grunt a
+	grunt.registerTask('a', ['assemble']);
+	
 	//デフォルト
 	grunt.registerTask('default', [
 		'connect',
 		'ect',
 		'watch'
 	]);
-	grunt.task.loadNpmTasks('assemble');
-	// assemble(a) タスクコマンド grunt a
-	grunt.registerTask('a', ['assemble']);
-
 	//リリース用
 	grunt.registerTask('deploy',[
 		'clean:deleteRelease',
