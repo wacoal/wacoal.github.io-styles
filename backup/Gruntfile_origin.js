@@ -7,9 +7,9 @@ module.exports = function(grunt) {
 	// -----------------------------------
 	var pkg = grunt.file.readJSON('package.json');
 	var ROOT_PATH           = '.'
-	//, PROJECT_PATH        = ROOT_PATH + '/htdocs'
-	, PROJECT_PATH          = ROOT_PATH + '/wacoal.github.io'
-	, ASSET_TEMPLATE_PATH   = ROOT_PATH + '/assets/template'
+	, PROJECT_PATH        = ROOT_PATH + '/htdocs'
+	, PROJECT_PATH2       = ROOT_PATH + '/wacoal.github.io'
+	, ASSET_TEMPLATE_PATH = ROOT_PATH + '/assets/template'
 	, imgSpacer = ('../common/img/spacer.gif')
 	, imgSample = ('../common/img/sample/001_a.jpg')
 	//, imgSpacer = ('/img/spacer.gif')
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 
 		path:{
 			resource:"assets",
-			deploy:"wacoal.github.io"
+			deploy:"htdocs"
 		},
 
 		ect: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 				,flatten: false
 				,cwd: ASSET_TEMPLATE_PATH
 				,src: ['**/*.ect']
-				,dest: PROJECT_PATH
+				,dest: PROJECT_PATH2
 				,ext: '.html'
 				, variables: { // ★ここに書く
 					title: 'Document Title'
@@ -90,10 +90,9 @@ module.exports = function(grunt) {
 		cssmin: {
 			minify: {
 				expand: true,
-				cwd: 'backup/htdocs/common/css/',
-				//cwd: '<%= path.deploy %>/common/css/',
+				cwd: '<%= path.deploy %>/common/css/',
 				src: ['*.css', '!*.min.css'],
-				dest: '<%= path.deploy %>/common/css/',
+				dest: '<%= path.deploy %>/common/mincss/',
 				//ext: '.min.css',
 				ext: '.css',
 				options: {
