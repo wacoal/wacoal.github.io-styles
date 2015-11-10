@@ -178,7 +178,7 @@ module.exports = function(grunt) {
 			ect: {
 				files: ["<%= path.resource %>/**/*.ect","<%= path.resource %>/**/**/*.ect"],
 				tasks: ['ect']
-			}
+			},
 			images: {
 				cwd: '<%= path.deploy %>/common/img/',
 				files: ['**/*.{png,jpg,gif,svg}'],
