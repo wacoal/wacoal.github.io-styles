@@ -3,7 +3,7 @@
 # ************************************
 http_path = "/"
 css_dir = "assets/common/css"
-css_dir = "backup/htdocs/common/css"
+css_dir = "wacoal.github.io/common/css"
 sass_dir = "assets/common/css/sass"
 images_dir = "assets/common/img"
 generated_images_dir = "wacoal.github.io/common/img"

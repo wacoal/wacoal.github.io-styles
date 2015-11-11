@@ -11,13 +11,12 @@
 //$img-parts  : "../common/minimg/spacer.gif";
 
 @import "common/config";
-
 @import "sass_common/reset";
 @import "sass_js/js-mylazy";
 @import "sass_animation/spinner";
 
 .main {
-display: block;
+display: block
 }
 .lists {
 display: block;
@@ -31,3 +30,6 @@ display: block;
 max-width: 100%;
 margin: 0 auto;
 }
+
+
+
