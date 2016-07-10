@@ -1,0 +1,63 @@
+<% block 'title': %>
+closure
+<% end %>
+
+<% block 'css': %>
+
+<link type="text/css" rel="stylesheet" href="/common/css/webdesign_closure.css" media="screen" />
+
+<% end %>
+
+<% extend 'partials/layout_jquery.ect' %>
+
+<div class="box">
+
+<!--
+	<form name="frm" id="frm">
+	  <input type="submit" value="注文する">
+	</form>
+-->
+
+
+	<ul class="lists has_2">
+		<li class="lists__item">
+			<a href="javascript:;" id="js_model_a" class="model type_a">
+				GET POINT
+			</a>
+		</li>
+		<li class="lists__item">
+			<a href="javascript:;" id="js_model_b" class="model type_b">
+				SCORE <span id="js_score" class="score">0</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
+
+<script>
+$(function(){
+
+	var score = (function() {
+	  var count = 0;
+
+	  return {
+	    increment: function() {
+	      count++;
+	    },
+	    show: function() {
+	      return(count);
+	    }
+	  };
+
+	})();
+
+	$("#js_model_a").on('click',function(){
+		score.increment();
+	});
+
+	$("#js_model_b").on('click',function(){
+		$("#js_score").html(score.show());
+	});
+
+});
+</script>

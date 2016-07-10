@@ -1,0 +1,70 @@
+@charset "utf-8";
+/*********************************************
+* Theme Name : wacoal
+* Theme url  :
+* Description:
+* Auter      : ode
+* varsion    : 2016.07.11
+*********************************************/
+
+//images for css
+//$img-parts  : "../common/minimg/spacer.gif";
+
+
+@import "common/config";
+
+@import "sass_common/reset";
+@import "sass_common/lists";
+@import "sass_animation/fade";
+
+.box {
+	display: block;
+	padding: 16px;
+	text-align: center;
+}
+.model {
+	position: relative;
+	display: block;
+	padding: 80px 8px 8px;
+	font-size: 36px;
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		display: block;
+		width: 80px;
+		height: 80px;
+		margin: 0 0 0 -40px;
+		color: #212121;
+		font-size: 64px;
+		text-align: center;
+	}
+	&.type_a:before {
+		content: "A";
+	}
+	&.type_b:before {
+		content: "B";
+	}
+}
+.score {
+	position: relative;
+	display: inline-block;
+	height: 1em;
+	line-height: 1em;
+	// &:before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	display: block;
+	// 	width: 100%;
+	// 	height: 1em;
+	// 	background: #212121;
+	// }
+	// &.hide:before {
+	// 	-moz-animation: fade-in 1s ease;
+	// 	-webkit-animation: fade-in 1s ease;
+	// 	-o-animation: fade-in 1s ease;
+	// 	-ms-animation: fade-in 1s ease;
+	// }
+}
