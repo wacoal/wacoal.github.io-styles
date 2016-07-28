@@ -1,0 +1,100 @@
+<% block 'title': %>
+triming
+<% end %>
+
+<% block 'css': %>
+
+<link type="text/css" rel="stylesheet" href="/common/css/webdesign_triming8.css" media="screen" />
+
+<% end %>
+
+<% extend 'partials/layout_jquery.ect' %>
+
+<div id="pageBottom" class="case">
+	<h3 class="titLv2">画像の投稿はコチラ</h3>
+
+	<div class="trimming-wrap-content">
+		<div class="trimming-wrap">
+			<div class="trimming-wrap-head"><!-- ファイル選択とアナウンス -->
+
+					<p class="trimming-move__txt">
+						<span id="scale"></span><br>
+						<span id="areaWidth"></span><br>
+						<span id="elmWidth"></span><br>
+						<span id="elmY"></span><br>
+						<span id="elmX"></span>
+						<!--
+						scaleSize=<span id="x"></span>
+						trimy=<span id="y"></span><br>
+						oSize=<span id="o-size"></span>.nowSize=<span id="now-size"></span><br>
+						nowx＝<span id="x_now"></span>
+						nowy=<span id="y_now"></span><br>
+						scaleSize=<span id="scale"></span>
+						-->
+					</p>
+			</div>
+
+
+			<div id="js_triming_area" class="triming-area">
+
+
+				<img src="/common/img/download2.jpg" id="js_triming_image" class="triming-area__image" alt="" />
+				<!--
+				<figure class="triming-figure">
+					<img src="/common/img/download1.jpg" id="js_triming_image" class="triming-figure__image" alt="" />
+				</figure>
+
+				-->
+
+				<div id="js_triming_target" class="triming-area__target"></div>
+
+			</div>
+
+
+			<div id="js_loading" class="loading">
+					<div class="loading__loader">Loading...</div>
+			</div>
+
+
+
+
+
+			<!--
+			<div class="trimming-move">
+					<label class="trimming-move-label">
+							<input id="js_btn_rotate" type="button" class="bttn__input" value="回転">
+					</label>
+			</div>
+			-->
+			<!--
+			<ul class="lists has_2 box trimming-wrap-button">
+					<li class="lists__item ">
+						<label class="bttn" for="open-prof">閉じる</label>
+					</li>
+					<li class="lists__item">
+						<label class="trimming-label bttn">
+							<input type="submit" name="rebutton" value="この位置で切り取る" id="js_btn_upload" class="bttn__input" />
+						</label>
+					</li>
+			</ul>
+			-->
+
+
+		</div>
+	</div>
+
+</div>
+
+
+
+
+<script type="text/javascript" src="/common/js/hammer.min.js"></script>
+<!--<script type="text/javascript" src="/common/js/jquery.hammer.js"></script>-->
+<script type="text/javascript" src="/common/js/triming8.js"></script>
+<script>
+$(function(){
+	$(window).on("load",function(){
+		//main("/common/img/download1.jpg");
+	});
+});
+</script>

@@ -1,0 +1,33 @@
+<% block 'title': %>
+triming
+<% end %>
+
+<% block 'css': %>
+<link type="text/css" rel="stylesheet" href="/common/css/webdesign_triming7.css" media="screen" />
+<% end %>
+
+<% extend 'partials/layout.ect' %>
+
+<div id="pageBottom" class="case">
+	<h3 class="titLv2">画像の投稿はコチラ</h3>
+
+	<form>
+		<canvas id="DrawField" style="border:solid"></canvas>
+  	<input id= "Rotation" type=button value="回転" onClick="rotate()"　style="position:absolute; left:50px; top:420px; width:50px;">
+  	<input id= "Shrink" type=button value="縮小" onClick="ShrinkView()" style="position:absolute; left:130px; top:420px; width:50px;">
+  	<input id= "Expand" type=button value="拡大" onClick="ExpandView()" style="position:absolute; left:210px; top:420px; width:50px;">
+  	<input id= "Stop" type=button value="停止" onClick="StopRotate()" style="position:absolute; left:290px; top:420px; width:50px;">
+	</form>
+
+</div>
+
+<script type="text/javascript" src="/common/js/hammer.min.js"></script>
+<script type="text/javascript" src="/common/js/triming7.js"></script>
+
+<script>
+$(function(){
+	$(window).on("load",function(){
+		main("/common/img/download2.jpg");
+	});
+});
+</script>

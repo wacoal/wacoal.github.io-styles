@@ -16,6 +16,89 @@
 @import "sass_common/reset";
 @import "sass_common/lists";
 
+/*loading
+********************/
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	&.hide {
+		display: none;
+	}
+}
+.loading__loader {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	color: #bbbbbb;
+	text-align: center;
+}
+
+
+/*triming
+**********************/
+.triming-area {
+	position: relative;
+  width: 100%;
+	height: 100%;
+	overflow: hidden;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  text-align: center;
+  cursor: move;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform:translate(-50%, -50%);
+  -o-transform:translate(-50%, -50%);
+  -ms-transform:translate(-50%, -50%);
+
+}
+.triming-area__image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	// min-width: 240px;
+	// min-height: 240px;
+}
+.triming-area__target {
+	box-sizing: border-box;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 240px;
+	height: 240px;
+	//margin: -120px 0 0 -120px;
+	border: solid 1px red;
+	box-shadow: 0 0 0 1000px rgba(0, 0, 0, .5);
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+//test
+.triming-figure {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+}
+.triming-figure__image {
+	
+}
 
 /*bttn
 ******************/
@@ -418,29 +501,7 @@ a.bttn:hover,
 //     max-width: 960px;
 //     margin: 30px auto;
 // }
-.triming-area {
-    width: 100%;
-		height: 100%;
-    // padding-bottom: 50%;
-    // margin-bottom: 30px;
-    // background: #ffe8ab;
-    position: relative;
 
-		overflow: hidden;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    text-align: center;
-    cursor: move;
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform:translate(-50%, -50%);
-    -o-transform:translate(-50%, -50%);
-    -ms-transform:translate(-50%, -50%);
-
-}
 .triming-area__board {
 	position: absolute;
 	z-index: 1600;
