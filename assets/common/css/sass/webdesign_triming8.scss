@@ -97,7 +97,7 @@
 	width: 100%;
 }
 .triming-figure__image {
-	
+
 }
 
 /*bttn
@@ -342,7 +342,8 @@ a.bttn:hover,
     color: #fff;
     text-align: center;
 		&.is_small {
-			font-size: 9px
+			font-size: 9px;
+			line-height: 1em;
 		}
  }
  .trimming-move-area:before,
