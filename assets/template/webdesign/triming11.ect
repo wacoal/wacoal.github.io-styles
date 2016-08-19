@@ -1,10 +1,10 @@
 <% block 'title': %>
-triming　8
+triming　11
 <% end %>
 
 <% block 'css': %>
 
-<link type="text/css" rel="stylesheet" href="/common/css/webdesign_triming8.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/common/css/webdesign_triming11.css" media="screen" />
 
 <% end %>
 
@@ -28,13 +28,12 @@ triming　8
 
 
 			<div id="js_triming_area" class="triming-area">
-
-
 				<img src="/common/img/download2.jpg" id="js_triming_image" class="triming-area__image" alt="" />
+
 				<!--
-				<figure class="triming-figure">
-					<img src="/common/img/download1.jpg" id="js_triming_image" class="triming-figure__image" alt="" />
-				</figure>
+				<img src="/common/img/download2.jpg" id="js_triming_image" class="triming-area__image" alt="" />
+				<canvas id="js_triming_image" class="triming-area__image"></canvas>
+
 				-->
 
 				<div id="js_triming_target" class="triming-area__target"></div>
@@ -57,19 +56,17 @@ triming　8
 					</label>
 			</div>
 			-->
-			<!--
+
 			<ul class="lists has_2 box trimming-wrap-button">
 					<li class="lists__item ">
-						<label class="bttn" for="open-prof">閉じる</label>
+						<a href="javascript:;" class="bttn">閉じる</a>
 					</li>
 					<li class="lists__item">
-						<label class="trimming-label bttn">
-							<input type="submit" name="rebutton" value="この位置で切り取る" id="js_btn_upload" class="bttn__input" />
-						</label>
+						<a href="javascript:;" id="js_btn_upload" class="trimming-label bttn">
+							この位置で切り取る
+						</a>
 					</li>
 			</ul>
-			-->
-
 
 		</div>
 	</div>
@@ -81,11 +78,11 @@ triming　8
 
 <script type="text/javascript" src="/common/js/hammer.min.js"></script>
 <!--<script type="text/javascript" src="/common/js/jquery.hammer.js"></script>-->
-<script type="text/javascript" src="/common/js/triming8.js"></script>
+<script type="text/javascript" src="/common/js/triming11.js?160819"></script>
 <script>
 $(function(){
 	$(window).on("load",function(){
-		//main("/common/img/download1.jpg");
+		//main("/common/img/download2.jpg");
 	});
 });
 </script>
