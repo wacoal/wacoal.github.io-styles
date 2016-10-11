@@ -1,0 +1,91 @@
+<% block 'title': %>
+vue_1
+<% end %>
+
+<% block 'css': %>
+<!--<link type="text/css" rel="stylesheet" href="/common/css/vue_1.css" media="screen" />-->
+<script type="text/javascript" src="/common/js/lib/vue.min.js"></script>
+<% end %>
+
+<% extend 'partials/layout_jquery.ect' %>
+
+
+<div id="todo">
+	<h1>My Todos</h1>
+	<div v-repeat="t : todos | orderBy 'isDone'">
+			<input type="checkbox" v-model="t.isDone" />
+			{{$index}}:{{t.content}}
+	</div>
+	<input type="text" v-model="input" value="">
+	<input type="button" v-on="click: addTodo" value="add todo" />
+	<div>
+			left {{lefts}} tasks.
+	</div>
+</div>
+
+<ul id="example-1">
+  <li v-for="item in items">
+    {{ item.message }}
+  </li>
+</ul>
+
+<script type="text/javascript">
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
+  }
+})
+
+var app = new Vue({
+	//select html element
+	el: '#todo',
+	//init data
+	data: {
+			todos: [],
+			input: ""
+	},
+	//automatically value will be computed
+	computed: {
+			lefts: function(){
+					return this.todos.filter(function(t){ return !t.isDone }).length;
+			}
+	},
+	//called when loaded
+	created: function(){
+			this.title = "My Todos";
+			var saved = [
+			{
+				isDone:true,
+				content:"content1"
+			},
+			{
+				isDone:false,
+				content:"content2"
+			},
+			{
+				isDone:false,
+				content:"content3"
+			},
+			{
+				isDone:false,
+				content:"content4"
+			}
+			]
+			for(var i = 0; i < saved.length; i++){
+					this.todos.push(saved[i]);
+			}
+
+	},
+	methods:{
+			addTodo: function(){
+					if ( this.input === '' ) return;
+					this.todos.push({ isDone:false , content:this.input });
+					this.input = ""
+			}
+	}
+})
+</script>
