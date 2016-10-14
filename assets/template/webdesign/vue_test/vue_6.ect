@@ -1,0 +1,69 @@
+<% block 'title': %>
+vue_1
+<% end %>
+
+<% block 'css': %>
+<!--<link type="text/css" rel="stylesheet" href="/common/css/vue_1.css" media="screen" />-->
+
+<style>
+.tag-editor-field {
+  border: #000 1px solid;
+  display: inline-block;
+  *display: inline; /* IE7 */
+  *zoom: 1; /* IE7 */
+}
+.tag-editor-tag {
+  background: #cde69c;
+  margin: 4px;
+  padding: 2px 4px;
+  display: inline-block;
+  *display: inline; /* IE7 */
+  *zoom: 1; /* IE7 */
+}
+.tag-editor-text {
+  font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 14px;
+  display: inline-block;
+  *display: inline; /* IE7 */
+  *zoom: 1; /* IE7 */
+}
+.tag-editor-delete {
+  color: #82ad2b;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 6px;
+  display: inline-block;
+  *display: inline; /* IE7 */
+  *zoom: 1; /* IE7 */
+}
+.tag-editor-input {
+  font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 14px;
+  padding: 2px 4px;
+  border: none;
+  outline: none;
+}
+.tag-editor-measure {
+  position: absolute;
+  left: -999px;
+}
+#demo {
+  width: 200px;
+}
+</style>
+<% end %>
+
+
+<% extend 'partials/layout.ect' %>
+
+<div id="demo">
+  <div is="tag-editor-field" v-with="tagEditorOptions"></div>
+
+  <tag-editor-field v-with="tagEditorOptions" :modal-data="modalData"></tag-editor-field>
+
+</div>
+
+<script type="text/javascript" src="/common/js/lib/vue/1.0.26/vue.min.js"></script>
+<script src="/common/js/vue/vue_6_tag-editor.js"></script>
+<script src="/common/js/vue/vue_6_app.js"></script>

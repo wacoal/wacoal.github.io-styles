@@ -1,0 +1,61 @@
+<% block 'title': %>
+triming 10
+<% end %>
+
+<% block 'css': %>
+
+<link type="text/css" rel="stylesheet" href="/common/css/webdesign_triming10.css" media="screen" />
+
+<% end %>
+
+<% extend 'partials/layout_jquery.ect' %>
+
+<div id="pageBottom" class="case">
+	<h3 class="titLv2">画像の投稿はコチラ</h3>
+
+	<div class="trimming-wrap-content">
+		<div class="trimming-wrap">
+			<div class="trimming-wrap-head"><!-- ファイル選択とアナウンス -->
+					<p class="trimming-move__txt">
+						elmWidth<span id="elmWidth"></span> elmHeight<span id="elmHeight"></span><br>
+						scale<span id="scale"></span> startX<span id="startX"></span><br>
+						lastX<span id="lastX"></span> lastY<span id="lastY"></span><br>
+						nowCoordX<span id="nowCoordX"></span> elmMoveX<span id="elmMoveX"></span><br>
+						slideX<span id="slideX"></span> slideY<span id="slideY"></span>
+					</p>
+			</div>
+
+			<form id="canvasCtrl">
+				<input type="range" max="180" min="-180" value="0" size="3" id="rad" style="z-index:1;position:absolute;display:none;">
+			</form>
+			<div id="js_triming_area" class="triming-area">
+				<canvas id="canvas" style="" width="360" height="500"></canvas>
+			</div>
+
+			<div id="js_loading" class="loading">
+					<div class="loading__loader">Loading...</div>
+			</div>
+
+			<ul class="lists has_2 box trimming-wrap-button">
+					<li class="lists__item ">
+						<a href="javascript:;" class="bttn">閉じる</a>
+					</li>
+					<li class="lists__item">
+						<a href="javascript:;" id="js_btn_upload" class="trimming-label bttn">
+							この位置で切り取る
+						</a>
+					</li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/common/js/triming10.js"></script>
+<script>
+$(function(){
+	$(window).on("load",function(){
+		canvasTo("/common/img/download2.jpg");
+	});
+});
+</script>

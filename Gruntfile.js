@@ -173,7 +173,7 @@ module.exports = function(grunt) {
 	grunt.task.loadNpmTasks('assemble');
 	// assemble(a) タスクコマンド grunt a
 	grunt.registerTask('a', ['assemble']);
-	
+
 	//デフォルト
 	grunt.registerTask('default', [
 		'connect',

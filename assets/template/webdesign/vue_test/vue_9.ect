@@ -1,0 +1,46 @@
+<% block 'title': %>
+vue_9
+<% end %>
+
+<% block 'css': %>
+<!--<link type="text/css" rel="stylesheet" href="/common/css/vue_1.css" media="screen" />-->
+<style>
+
+</style>
+<% end %>
+
+<% extend 'partials/layout_jquery.ect' %>
+
+
+
+
+
+<div id="prof">
+  <input type="text" v-model="newEvent.name" name="name" @blur="onBlur" @keyup="onKeyup" size="40" data-maxlength="10" value="" placeholder="名前を入力してください" class="form-control__item js_input">
+</div>
+
+
+
+<div id="app">
+  <div is="pattern-component"></div>
+  <div is="text-test"></div>
+</div>
+
+
+  <!--
+
+
+  <div id="app">
+    <pattern-component v-for="pattern in partterns" :pattern="pattern" track-by="$index"/>
+  </div>
+
+
+  <div id="example">
+    <text-test></text-test>
+    <div is="text-test"></div>
+  </div>
+  -->
+
+<script src="/common/js/lib/vue/1.0.26/vue.min.js"></script>
+<script src="/common/js/vue/vue_9_definition.js"></script>
+<script src="/common/js/vue/vue_9_app.js"></script>
