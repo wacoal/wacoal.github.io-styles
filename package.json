@@ -27,5 +27,6 @@
     "install": "^0.8.1",
     "npm": "^3.10.3"
   },
-  "homepage": "https://bitbucket.org/odego/grunt_first_kit_1#readme"
+  "homepage": "https://bitbucket.org/odego/grunt_first_kit_1#readme",
+  "dependencies": {}
 }
