@@ -1,0 +1,171 @@
+<div class="secondary">
+	<a href="javascript:;" class="btn size_l btn_b">無料会員登録</a>
+	<a href="javascript:;" class="btn size_l btn_a">ログイン</a>
+
+	<section class="secondary-sect is_news">
+		<script type="text/javascript">
+		// クッキーの書き込み
+		function saveCookie() {
+			cName = "nowDay="; // クッキー名
+			cDays = 365; // データの保存日数
+			setPre = new Date();
+			tm = setPre.getTime()
+			aDay = tm;
+			setPre.setTime(setPre.getTime() + (cDays * 1000 * 24 * 3600));
+			prd = setPre.toGMTString();
+			document.cookie = cName + escape(aDay) + "; path=/; expires=" + prd;
+		}
+		var topNewszIndex = 1;
+		function topNewsOpen(obj) {
+			if (document.getElementById(obj).style.display == "none") {
+				document.getElementById(obj).style.display = "block";
+				document.getElementById(obj).style.top = 20 * obj.slice(-1) + 20 + "px";
+				document.getElementById(obj).style.zIndex = topNewszIndex;
+				topNewszIndex += 1;
+			} else {
+				document.getElementById(obj).style.display = "none";
+			}
+		}
+		</script>
+		<h3 class="secondary-sect-tit">お知らせ</h3>
+		<div class="secondary-sect-inner">
+		<div class="list has_1">
+				<script type="text/javascript">
+					cName = "nowDay=";
+					cCookie = document.cookie + ";";
+					str = cCookie.indexOf(cName);
+					if (str != -1) {
+						end = cCookie.indexOf(";", str);
+						nowDay = unescape(cCookie.substring(str + cName.length, end));
+					} else {
+						nowDay = 0;
+					}
+					if (nowDay < 1447513393000) {
+						document.write("<p class=\"list__item\"><a class=\"links\" href=\"<% include ../variables/_siteurl %>pickup/report/2015-11-14.html\" onClick=\"topNewsOpen('newsWindow');\" class=\"new\">【祝！11/22】あやぷぅ　*☆ちゃんお誕生日カウントダウンパーチャ開催!!</p>");
+					} else {
+						document.write("<p class=\"list__item\"><a class=\"links\" href=\"<% include ../variables/_siteurl %>pickup/report/2015-11-14.html\" onClick=\"topNewsOpen('newsWindow');\">【祝！11/22】あやぷぅ　*☆ちゃんお誕生日カウントダウンパーチャ開催!!</a></p>");
+					}
+				</script>
+				<script type="text/javascript">
+					saveCookie();
+				</script>
+				<script type="text/javascript">
+					cName = "nowDay=";
+					cCookie = document.cookie + ";";
+					str = cCookie.indexOf(cName);
+					if (str != -1) {
+						end = cCookie.indexOf(";", str);
+						nowDay = unescape(cCookie.substring(str + cName.length, end));
+					} else {
+						nowDay = 0;
+					}
+					if (nowDay < 1447270988000) {
+						document.write("<p class=\"list__item\"><a class=\"links\" href=\"<% include ../variables/_siteurl %>pickup/report/2015-11-12.html\" onClick=\"topNewsOpen('newsWindow');\" class=\"new\">天真爛漫！Kana…ちゃん!!</p>");
+					} else {
+						document.write("<p class=\"list__item\"><a class=\"links\" href=\"<% include ../variables/_siteurl %>pickup/report/2015-11-12.html\" onClick=\"topNewsOpen('newsWindow');\">天真爛漫！Kana…ちゃん!!</a></p>");
+					}
+				</script>
+				<script type="text/javascript">
+					saveCookie();
+				</script>
+				<script type="text/javascript">
+					cName = "nowDay=";
+					cCookie = document.cookie + ";";
+					str = cCookie.indexOf(cName);
+					if (str != -1) {
+						end = cCookie.indexOf(";", str);
+						nowDay = unescape(cCookie.substring(str + cName.length, end));
+					} else {
+						nowDay = 0;
+					}
+					if (nowDay < 1446709738000) {
+						document.write("<p class=\"list__item\"><a class=\"links\" href=\"<% include ../variables/_siteurl %>pickup/report/2015-11-05.html\" onClick=\"topNewsOpen('newsWindow');\" class=\"new\">チャット画面がワイド(16：9)に対応しました!!</p>");
+					} else {
+						document.write("<p class=\"list__item\"><a class=\"links\" href=\"<% include ../variables/_siteurl %>pickup/report/2015-11-05.html\" onClick=\"topNewsOpen('newsWindow');\">チャット画面がワイド(16：9)に対応しました!!</a></p>");
+					}
+				</script>
+				<script type="text/javascript">
+					saveCookie();
+				</script>
+				<script type="text/javascript">
+					cName = "nowDay=";
+					cCookie = document.cookie + ";";
+					str = cCookie.indexOf(cName);
+					if (str != -1) {
+						end = cCookie.indexOf(";", str);
+						nowDay = unescape(cCookie.substring(str + cName.length, end));
+					} else {
+						nowDay = 0;
+					}
+					if (nowDay < 1446385090000) {
+						document.write("<p class=\"list__item\"><a class=\"links\" href=\"<% include ../variables/_siteurl %>pickup/report/2015-11-01.html\" onClick=\"topNewsOpen('newsWindow');\" class=\"new\">【結果発表】ハロウィンブログコンテスト!!</p>");
+					} else {
+						document.write("<p class=\"list__item\"><a class=\"links\" href=\"<% include ../variables/_siteurl %>pickup/report/2015-11-01.html\" onClick=\"topNewsOpen('newsWindow');\">【結果発表】ハロウィンブログコンテスト!!</a></p>");
+					}
+				</script>
+				<script type="text/javascript">
+					saveCookie();
+				</script>
+			</div>
+		</div>
+	</section>
+
+	<section class="secondary-sect is_banner">
+		<a class="btn is_image" href="<% include ../variables/_siteurl %>gift/"><img alt="55ギフト" src="<% include ../variables/_siteurl %>cache/common/img/ban_55gift.png"></a>
+		<a class="btn is_image" href="<% include ../variables/_siteurl %>pickup/report/2014-08-07.html"><img alt="障害対応最新情報" src="<% include ../variables/_siteurl %>cache/common/img/ban_restoration.png"></a>
+	</section>
+
+	<section class="secondary-sect is_app">
+		<h3 class="secondary-sect-app-tit">スマートフォンからも<br>お楽しみ頂けます!!</h3>
+		<a class="btn is_image" target="_blank" href="https://itunes.apple.com/jp/app/wellcam/id562162550"><img alt="アップルストアへ" src="<% include ../variables/_siteurl %>cache/common/img/common_btn_apple.gif"></a>
+		<a class="btn is_image" target="_blank" href="https://play.google.com/store/apps/details?id=air.com.livede55.android.chat"><img alt="グーグルプレイへ" src="<% include ../variables/_siteurl %>cache/common/img/common_btn_google.gif"></a>
+	</section>
+
+	<section class="secondary-sect is_pt-info">
+		<h3 class="secondary-sect-tit">ポイント案内</h3>
+		<dl class="secondary-sect-inner secondary-define">
+			<dt class="secondary-define-tit">消費ポイント</dt>
+			<dd class="secondary-define-data">
+				<ul class="list has_1">
+					<li class="list__item"><span class="secondary-define-data__tit">待機映像</span>無料</li>
+					<li class="list__item"><span class="secondary-define-data__tit">パーティー</span>80<span class="lowest">pts/分</span></li>
+					<li class="list__item"><span class="secondary-define-data__tit">のぞき</span>80<span class="lowest">pts/分</span></li>
+					<li class="list__item"><span class="secondary-define-data__tit">2ショット</span>100<span class="lowest">pts/分</span></li>
+					<li class="list__item"><span class="secondary-define-data__tit">DSチャット</span>120<span class="lowest">pts/分</span></li>
+				</ul>
+				<a class="links has_arrow" href="<% include ../variables/_siteurl %>beginner/charge.html">詳しい料金案内</a>
+			</dd>
+		</dl>
+	</section>
+
+	<section class="secondary-sect is_rank">
+		<div class="rank-info">
+			<h3 class="rank-info__tit">前日ランキング</h3>
+			<p class="rank-info__txt">前日1～10位の女の子がランダムで表示されています</p>
+		</div>
+		<ul class="list has_1">
+			<li class="list__item">
+				<a class="rank-info-girls" target="_blank" href="<% include ../variables/_siteurl %>performer/profile/p141535234">
+					<div class="wrap-pic"><div class="pic" style="background-image:url(<% include ../img/_img_sample %>); background-position: 050% 050%;"></div></div>
+					<div class="rank-info-girls-status status_00">
+						<p class="rank-info-girls-status__name">うみのたらこ</p>
+					</div>
+				</a>
+			</li>
+			<li class="list__item">
+				<a class="rank-info-girls" target="_blank" href="<% include ../variables/_siteurl %>performer/profile/p101289466">
+					<div class="wrap-pic"><div class="pic" style="background-image:url(<% include ../img/_img_sample %>); background-position: 050% 050%;"></div></div>
+					<div class="rank-info-girls-status status_00">
+						<div class="rank-info-girls-status__name">コロネ</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<a class="rank-info-more" href="<% include ../variables/_siteurl %>ranking/">他のランキングも見る</a>
+	</section>
+
+	<aside class="secondary-sect banner">
+		<a tit="出演女性募集中！" target="_blank" href="http://lady.livede55.com/?b=mens2014"><img alt="出演女性(チャットレディ)募集中" src="<% include ../variables/_siteurl %>cache/common/img/ban_ladyrecruit.png"></a>
+	</aside>
+
+</div>

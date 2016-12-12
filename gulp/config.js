@@ -4,10 +4,10 @@ module.exports = {
     style: {
       watch: 'assets/sass/**/*.scss',
       src: 'assets/sass/**/*.scss',
-      dest: 'css',
+      dest: 'wacoal.github.io/common/css',
       copy: {
-        from: 'css/**/*.css',
-        to: 'sample/css'
+        from: 'wacoal.github.io/common/css/**/*.css',
+        to: 'common/css'
       }
     },
     script: {
@@ -21,10 +21,10 @@ module.exports = {
     image: {
       watch: 'assets/img/**/*.+(jpg|jpeg|png|gif|svg)',
       src: 'assets/img/**/*.+(jpg|jpeg|png|gif|svg)',
-      dest: 'img',
+      dest: 'wacoal.github.io/common/img',
       copy: {
-        from: 'img/**/*',
-        to: 'sample/img'
+        from: 'wacoal.github.io/common/img/**/*',
+        to: 'common/img'
       }
     },
     cacheImage: {
@@ -33,15 +33,15 @@ module.exports = {
         to: 'sample/cache/common'
       }
     },
-    iconfont: {
-      watch: 'gg-fonts/*.svg',
-      src: 'gg-fonts/*.svg',
-      dest: 'fonts',
-      copy: {
-        from: 'public/fonts/*.+(eot|ttf|woff|woff2)',
-        to: 'sample/fonts'
-      }
-    },
+    // iconfont: {
+    //   watch: 'gg-fonts/*.svg',
+    //   src: 'gg-fonts/*.svg',
+    //   dest: 'fonts',
+    //   copy: {
+    //     from: 'public/fonts/*.+(eot|ttf|woff|woff2)',
+    //     to: 'sample/fonts'
+    //   }
+    // },
     templates: {
       watch: 'assets/template/**/*.ejs',
       src: ['assets/template/**/*.ejs', '!assets/template/**/_*.ejs'],
@@ -51,10 +51,10 @@ module.exports = {
     clean: ['public', 'sample']
   },
   browserSync: {
-    proxy: 'https://vm.livede55.com',
-    serveStatic: ['views', 'sample'],
+    proxy: 'http://',
+    serveStatic: ['sample'],
     // files: ['views/**/*.blade.php', 'public/css/**/*.css', 'sample/**/*.html', 'sample/css/**/*.css'],
-    files: ['views/**/*.blade.php', 'css/**/*.css'],
+    files: ['css/**/*.css'],
     port: 3000
   }
 };

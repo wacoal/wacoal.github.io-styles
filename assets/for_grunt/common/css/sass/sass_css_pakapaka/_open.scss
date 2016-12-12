@@ -1,0 +1,40 @@
+/****************
+open
+******************/
+.wrap-open {
+	position: relative;
+	display: block;
+	padding: 60px 6px 10px;
+	background: #dfdfdf;
+}
+.box-open { display: none; }
+
+.btn-open.type_input:checked + .wrap-open__inner { font-size: inehrit; }
+.btn-open.type_input:checked + .wrap-open__inner .btn-open__inner,
+.btn-open.type_input:checked + .wrap-open__inner .btn-open.type_label {
+	background: #dfdfdf;
+}
+.btn-open.type_input:checked + .wrap-open__inner .btn-open__inner:after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 12px;
+	top: 50%;
+	width: 12px;
+	height: 6px;
+	margin-top: -8px;
+	border-bottom: solid 4px #555;
+	border-left: solid 4px #555;
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+}
+.btn-open.type_input:checked + .wrap-open__inner .box-open {
+	display: block;
+	padding: 10px;
+	background: #fff;
+}
+.btn-open.type_input:checked + .wrap-open__inner .box-open__txt {
+	font-size: 14px;
+}

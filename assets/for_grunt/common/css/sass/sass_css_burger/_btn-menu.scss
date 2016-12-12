@@ -1,0 +1,32 @@
+/****************
+btn-menu
+******************/
+.btn-menu {
+	display: inline-block;
+	float: left;
+	top: 0;
+	left: 0;
+	width: 56px;
+	height: 16px;
+	line-height: 16px;
+	padding: 26px 0 4px 7px;
+	font-size: $f-ss;
+	white-space: nowrap;
+	color: $c-mute;
+	text-align: left;
+	cursor: pointer;
+}
+.btn-menu.type_burger:before {
+	content:'';
+	position:absolute;
+	top:10px;
+	left:12px;
+	display:block;
+	width:22px;
+	height:3px;
+	background:#afafaf;
+	border-radius:4px;
+	-webkit-box-shadow:0 6px #afafaf, 0 12px #afafaf;
+	-moz-box-shadow:0 6px #afafaf, 0 12px #afafaf;
+	box-shadow:0 6px #afafaf, 0 12px #afafaf;
+}
