@@ -1,6 +1,6 @@
 module.exports = {
   path: {
-    view: 'views/**/*.blade.php',
+    //view: 'views/**/*.blade.php',
     style: {
       watch: 'assets/sass/**/*.scss',
       src: 'assets/sass/**/*.scss',
@@ -27,12 +27,12 @@ module.exports = {
         to: 'common/img'
       }
     },
-    cacheImage: {
-      copy: {
-        from: 'cache/common/**/*',
-        to: 'sample/cache/common'
-      }
-    },
+    // cacheImage: {
+    //   copy: {
+    //     from: 'cache/common/**/*',
+    //     to: 'sample/cache/common'
+    //   }
+    // },
     // iconfont: {
     //   watch: 'gg-fonts/*.svg',
     //   src: 'gg-fonts/*.svg',
@@ -45,16 +45,18 @@ module.exports = {
     templates: {
       watch: 'assets/template/**/*.ejs',
       src: ['assets/template/**/*.ejs', '!assets/template/**/_*.ejs'],
-      dest: 'sample'
+      dest: 'wacoal.github.io'
     },
     html: 'sample/**/*.html',
     clean: ['public', 'sample']
   },
   browserSync: {
     proxy: 'http://',
-    serveStatic: ['sample'],
+    //serveStatic: ['sample'],
+    serveStatic: ['wacoal.github.io'],
+
     // files: ['views/**/*.blade.php', 'public/css/**/*.css', 'sample/**/*.html', 'sample/css/**/*.css'],
-    files: ['css/**/*.css'],
+    files: ['css/**/*.css' , "wacoal.github.io/**/*.html"],
     port: 3000
   }
 };
