@@ -19,7 +19,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0",
+    "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.7",
     "require-dir": "^0.3.0"
   },

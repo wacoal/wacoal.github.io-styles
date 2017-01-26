@@ -11,12 +11,9 @@ module.exports = {
       }
     },
     script: {
-      watch: 'js',
-      dest: 'js',
-      copy: {
-        from: 'js/**/*',
-        to: 'sample/js'
-      }
+      watch: 'assets/js/**/*.js',
+      src: 'assets/js/**/*.js',
+      dest: 'wacoal.github.io/common/js',
     },
     image: {
       watch: 'assets/img/**/*.+(jpg|jpeg|png|gif|svg)',

@@ -1,14 +1,29 @@
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var config = require('../config');
+import config from '../config';
+import gulp from 'gulp';
+import gulpLoadPlugins from 'gulp-load-plugins';
+const $ = gulpLoadPlugins();
 
-gulp.task('script-copy', function() {
-  gulp.src(config.path.script.copy.from)
-    .pipe(plumber({
-      errorHandler: function(err) {
-        console.log(err.messageFormatted);
-        this.emit('end');
-      }
+gulp.task('script', () => {
+  gulp.src(config.path.script.src)
+    .pipe($.plumber())
+    .pipe($.sourcemaps.init({
+      loadMaps: true
     }))
-    .pipe(gulp.dest(config.path.script.copy.to));
+    .pipe($.babel({
+      presets: ['es2015']
+    }))
+    .pipe($.uglify())
+    .pipe($.sourcemaps.write('./'))
+    .pipe(gulp.dest(config.path.script.dest));
 });
+
+// gulp.task('script-copy', () => {
+//   gulp.src(config.path.script.copy.from)
+//     .pipe($.plumber({
+//       errorHandler: (err) => {
+//         console.log(err.messageFormatted);
+//         this.emit('end');
+//       }
+//     }))
+//     .pipe(gulp.dest(config.path.script.copy.to));
+// });

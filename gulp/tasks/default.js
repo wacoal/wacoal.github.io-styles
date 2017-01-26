@@ -10,6 +10,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
   gulp.watch(config.path.style.watch, ['style']);
   gulp.watch(config.path.image.watch, ['imagemin']);
+  gulp.watch(config.path.script.watch, ['script']);
   //gulp.watch(config.path.iconfont.watch, ['iconfont']);
   gulp.watch(config.path.templates.watch, ['templates']);
 });
