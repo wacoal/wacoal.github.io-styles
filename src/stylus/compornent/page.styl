@@ -1,0 +1,49 @@
+.page {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  // background-color: #efefef;
+  // background-color: #bbb;
+  background-color: #f1f1f1;
+  // background-color: color_green;
+  background-image: url(img_bg);
+  background-repeat: repeat;
+  text-align: center;
+  background-size: 50%;
+  &.page_hanashi {
+    position: relative;
+    z-index: 80;
+    background-image: url(img_hanashi);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    &:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url(img_bg_rash);
+      background-repeat: repeat;
+      // background-size: 50%;
+      // background-color: rgba(0,100,100,0.2)
+      // background-color: rgba(100,100,100,0.2)
+    }
+  }
+}
+
+@media screen and (min-width: 480px){
+
+}
+@media screen and (min-width: 768px){
+  .page {
+    background-size: auto;
+  }
+}
+@media screen and (min-width: 920px){
+
+}

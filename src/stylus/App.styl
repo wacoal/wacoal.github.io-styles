@@ -1,0 +1,59 @@
+// Stylus entry point
+
+@import "../../node_modules/normalize.css/normalize.css";
+// @import "Icon.styl";
+
+@import "settings/variables/initial.styl";
+@import "settings/animation/quiver_right.styl";
+@import "settings/mixin/arrow.styl";
+
+body {
+  font-family:'Lucida Grande', Meiryo, sans-serif;
+  font-size: 14px;
+}
+ul,li {
+  list-style: none;
+}
+a {
+  color: color_green;
+}
+
+.hide {
+  display: none!important;
+}
+
+@import "compornent/belt.styl";
+@import "compornent/belt-dl.styl";
+@import "compornent/btn.styl";
+@import "compornent/btn-link.styl";
+@import "compornent/btn-square.styl";
+@import "compornent/box.styl";
+@import "compornent/comment.styl";
+@import "compornent/global-footer.styl";
+@import "compornent/global-header.styl";
+@import "compornent/hero.styl";
+@import "compornent/icon.styl";
+@import "compornent/list.styl";
+@import "compornent/page.styl";
+@import "compornent/pc-fix.styl";
+@import "compornent/section.styl";
+@import "compornent/slide.styl";
+
+@media screen and (min-width: 480px){
+
+}
+@media screen and (min-width: 768px){
+  body {
+    font-size: 18px;
+  }
+  a {
+    color: color_green;
+    transition: color 0.3s;
+    &:hover {
+      color: color_green_hover;
+    }
+  }
+}
+@media screen and (min-width: 920px){
+
+}

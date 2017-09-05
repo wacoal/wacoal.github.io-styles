@@ -40,10 +40,11 @@
     "build:js": "browserify ./src/js/App.js -d | exorcist ./src/assets/bundle.js.map > ./src/assets/bundle.js",
     "build:images": "imagemin ./src/images/* -o ./src/assets/images",
     "build": "npm-run-all -p build:css build:js build:images",
+    "watch:pug": "pug -w ./src/pug/*.pug -P -o ./src/assets/",
     "watch:css": "stylus -c -w --include-css ./src/stylus/App.styl -o ./src/assets/bundle.css -m --sourcemap-base ../stylus",
     "watch:js": "watchify ./src/js/App.js -v -o \"exorcist ./src/assets/bundle.js.map > ./src/assets/bundle.js\" -d",
     "watch:server": "browser-sync start --server ./ --startPath src/assets/",
-    "watch": "npm-run-all -p watch:css watch:js watch:server",
+    "watch": "npm-run-all -p watch:pug watch:css watch:js watch:server",
     "release:css": "stylus -c --include-css ./src/stylus/App.styl -o ./dist/bundle.css && cleancss -d -o ./dist/bundle.css ./dist/bundle.css",
     "release:js": "cross-env NODE_ENV=production browserify ./src/js/App.js | uglifyjs -c warnings=false -m > ./dist/bundle.js",
     "release:clean": "rimraf ./dist",
@@ -51,6 +52,7 @@
     "release": "npm-run-all -s release:clean release:copy -p release:css release:js"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {
@@ -70,6 +72,8 @@
     "mocha": "^3.4.2",
     "npm-run-all": "^4.0.2",
     "power-assert": "^1.4.4",
+    "pug": "^2.0.0-rc.3",
+    "pug-cli": "^1.0.0-alpha6",
     "rimraf": "^2.6.1",
     "stylus": "^0.54.5",
     "svg-sprite-generator": "0.0.7",

@@ -1,0 +1,42 @@
+.belt {
+  position: relative;
+  display: block;
+  min-height: 1rem;
+  // height: 44px;
+  // padding: 12px 16px 12px 80px;
+  padding: .8rem 1rem .8rem 0;
+  text-decoration: none;
+  color: color_black;
+  background: color_white;
+  font-size: font_size_normal;
+  text-align: left;
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+  &.arrow_right {
+    padding: .8rem 1.5rem .8rem 0;
+    @extend .arrow_right;
+  }
+  .icon {
+    // position: absolute;
+    // top: 50%;
+    // left: 16px;
+    display: block
+    float: left;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 .5rem 0px 0;
+    // margin-top: -22px;
+  }
+}
+
+.belt__text {
+  display: block;
+  padding: .5rem 0;
+  margin: 0;
+  word-wrap: break-word;
+  white-space: normal;
+}
