@@ -30,6 +30,9 @@
       "source": "./src/js"
     }
   },
+  "config": {
+    "date_today": "bash bin/today.sh"
+  },
   "scripts": {
     "test": "mocha --compilers js:babel-register src/js/**/*.test.js",
     "start": "npm run watch",
@@ -40,19 +43,25 @@
     "build:js": "browserify ./src/js/App.js -d | exorcist ./src/assets/bundle.js.map > ./src/assets/bundle.js",
     "build:images": "imagemin ./src/images/* -o ./src/assets/images",
     "build": "npm-run-all -p build:css build:js build:images",
-    "watch:pug": "pug -w ./src/pug/*.pug -P -o ./src/assets/",
-    "watch:css": "stylus -c -w --include-css ./src/stylus/App.styl -o ./src/assets/bundle.css -m --sourcemap-base ../stylus",
+    "watch:pug": "pug -w ./src/pug -P -o ./src/assets",
+    "watch:css": "stylus -c -w ./src/stylus/* !./src/stylus/**/_*.styl -o ./src/assets",
     "watch:js": "watchify ./src/js/App.js -v -o \"exorcist ./src/assets/bundle.js.map > ./src/assets/bundle.js\" -d",
     "watch:server": "browser-sync start --server ./ --startPath src/assets/",
     "watch": "npm-run-all -p watch:pug watch:css watch:js watch:server",
     "release:css": "stylus -c --include-css ./src/stylus/App.styl -o ./dist/bundle.css && cleancss -d -o ./dist/bundle.css ./dist/bundle.css",
     "release:js": "cross-env NODE_ENV=production browserify ./src/js/App.js | uglifyjs -c warnings=false -m > ./dist/bundle.js",
     "release:clean": "rimraf ./dist",
-    "release:copy": "cpx \"./src/assets/**/!(*.js|*.css|*.map)\" ./dist",
-    "release": "npm-run-all -s release:clean release:copy -p release:css release:js"
+    "release:copy": "cpx \"./src/assets/**/!(*.js|*.css|*.map)\" ./dist/",
+    "release:mkdir": "mkdirp ./dist && npm run release:clean && mkdirp ./dist/\"date '+%Y%m%d'\"/",
+    "release": "npm-run-all -s release:clean release:copy -p release:css release:js",
+    "go": "cpx -h",
+    "go2": "bash ./bin/today.sh",
+    "useConfig": "cross-conf-env echo $npm_package_config_date_today",
+    "moment": "echo $npm_package_config_date_today stylus -c --include-css ./src/stylus/App.styl -o ./dist/bundle.css && cleancss -d -o ./dist/bundle.css ./dist/bundle.css"
   },
   "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": "^R3.2.1",
+    "moment": "^2.18.1",
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {
@@ -64,11 +73,13 @@
     "browserify": "^14.4.0",
     "clean-css-cli": "^4.1.6",
     "cpx": "^1.5.0",
+    "cross-conf-env": "^1.1.2",
     "cross-env": "^5.0.1",
     "ejs-cli": "^2.0.0",
     "esdoc": "^0.5.2",
     "exorcist": "^0.4.0",
     "imagemin-cli": "^3.0.0",
+    "mkdirp": "^0.5.1",
     "mocha": "^3.4.2",
     "npm-run-all": "^4.0.2",
     "power-assert": "^1.4.4",
