@@ -1,32 +1,95 @@
 {
-  "name": "grunt_first_kit_1",
-  "version": "0.0.0",
-  "description": "手順  \r 2015.06.03",
+  "name": "",
+  "version": "1.2.0",
+  "description": "",
+  "author": "oode",
+  "license": "MIT",
   "main": "index.js",
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "env": {
+      "development": {
+        "presets": [
+          "power-assert"
+        ]
+      }
+    }
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "esdoc": {
+    "source": "./src/js",
+    "destination": "./esdoc",
+    "test": {
+      "type": "mocha",
+      "source": "./src/js"
+    }
+  },
+  "config": {
+    "date_today": "bash bin/today.sh"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel-register src/js/**/*.test.js",
+    "start": "npm run watch",
+    "esdoc": "esdoc",
+    "eslint": "eslint ./src/js/",
+    "icons": "svgo -f ./src/svg -o ./src/svg_min  && svg-sprite-generate -d ./src/svg_min -o ./src/assets/svg/sprite.svg",
+    "build:css": "node-sass -c ./src/sass/ -o ./src/assets/common/css/ --output-style compressed -m --sourcemap-base ../sass",
+    "build:js": "browserify ./src/js/App.js -d | exorcist ./src/assets/bundle.js.map > ./src/assets/bundle.js",
+    "build:images": "imagemin ./src/images/* -o ./src/assets/images",
+    "build": "npm-run-all -p build:css build:js build:images",
+
+    "watch:pug": "pug -w ./src/pug/ -P -o ./src/assets",
+    "watch:css": "node-sass -w ./src/sass/ -o ./src/assets/common/css/",
+    "watch:js": "watchify ./src/js/App.js -v -o \"exorcist ./src/assets/bundle.js.map > ./src/assets/bundle.js\" -d",
+    "watch:server": "browser-sync start --server ./ --startPath src/assets/",
+    "watch": "npm-run-all -p watch:pug watch:css watch:js watch:server",
+
+    "release:css": "mkdirp ./dist/common/css && node-sass -c ./src/sass/ -o ./dist/common/css --output-style compressed",
+    "release:js": "cross-env NODE_ENV=production browserify ./src/js/App.js | uglifyjs -c warnings=false -m > ./dist/bundle.js",
+    "release:clean": "rimraf ./dist",
+    "release:copy": "cpx \"./src/assets/**/!(*.js|*.css|*.map|_*.html)\" ./dist/",
+    "release:mkdir": "mkdirp ./dist && npm run release:clean && mkdirp ./dist/",
+    "release": "npm-run-all -s release:clean release:copy -p release:css release:js",
+    "go": "cpx -h"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://odego@bitbucket.org/odego/grunt_first_kit_1.git"
+  "dependencies": {
+    "jquery": "^R3.2.1",
+    "moment": "^2.18.1",
+    "normalize.css": "^7.0.0"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "assemble": "^0.4.42",
-    "grunt": "^0.4.5",
-    "grunt-contrib-compass": "^1.1.1",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-connect": "^0.11.2",
-    "grunt-contrib-cssmin": "^0.14.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-ect": "^0.1.2",
-    "grunt-git": "^0.3.5",
-    "grunt-newer": "^1.1.1",
-    "grunt-open": "^0.2.3",
-    "install": "^0.8.1",
-    "npm": "^3.10.3"
-  },
-  "homepage": "https://bitbucket.org/odego/grunt_first_kit_1#readme",
-  "dependencies": {}
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-power-assert": "^1.0.0",
+    "babel-register": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.12",
+    "browserify": "^14.4.0",
+    "clean-css-cli": "^4.1.6",
+    "cpx": "^1.5.0",
+    "cross-conf-env": "^1.1.2",
+    "cross-env": "^5.0.1",
+    "ejs-cli": "^2.0.0",
+    "esdoc": "^0.5.2",
+    "exorcist": "^0.4.0",
+    "imagemin-cli": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.4.2",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
+    "power-assert": "^1.4.4",
+    "pug": "^2.0.0-rc.3",
+    "pug-cli": "^1.0.0-alpha6",
+    "rimraf": "^2.6.1",
+    "stylus": "^0.54.5",
+    "svg-sprite-generator": "0.0.7",
+    "svgo": "^0.7.2",
+    "uglify-es": "^3.0.15",
+    "watchify": "^3.9.0"
+  }
 }

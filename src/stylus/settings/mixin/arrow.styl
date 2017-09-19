@@ -1,0 +1,46 @@
+.arrow_right {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    display: block;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    border-right: solid 2px color_green;
+    border-bottom: solid 2px color_green;
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    animation: quiver_right 2s ease 0s infinite alternate none running;
+    -moz-animation: quiver_right 2s ease 0s infinite alternate none running;
+    -webkit-animation: quiver_right 2s ease 0s infinite alternate none running;
+    -o-animation: quiver_right 2s ease 0s infinite alternate none running;
+    -ms-animation: quiver_right 2s ease 0s infinite alternate none running;
+  }
+}
+.arrow_bottom {
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    right: 4px;
+    display: block;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    border-right: solid 2px color_green;
+    border-bottom: solid 2px color_green;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    animation: quiver_bottom 2s ease 0s infinite alternate none running;
+    -moz-animation: quiver_bottom 2s ease 0s infinite alternate none running;
+    -webkit-animation: quiver_bottom 2s ease 0s infinite alternate none running;
+    -o-animation: quiver_bottom 2s ease 0s infinite alternate none running;
+    -ms-animation: quiver_bottom 2s ease 0s infinite alternate none running;
+  }
+}
