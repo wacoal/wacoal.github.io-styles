@@ -40,18 +40,16 @@
     "eslint": "eslint ./src/js/",
     "icons": "svgo -f ./src/svg -o ./src/svg_min  && svg-sprite-generate -d ./src/svg_min -o ./src/assets/svg/sprite.svg",
     "build:css": "node-sass -c ./src/sass/ -o ./src/assets/common/css/ --output-style compressed -m --sourcemap-base ../sass",
-    "build:js": "browserify ./src/js/App.js -d | exorcist ./src/assets/bundle.js.map > ./src/assets/bundle.js",
+    "build:js": "babel ./src/js -d ./src/assets/common/js",
     "build:images": "imagemin ./src/images/* -o ./src/assets/images",
     "build": "npm-run-all -p build:css build:js build:images",
-
     "watch:pug": "pug -w ./src/pug/ -P -o ./src/assets",
     "watch:css": "node-sass -w ./src/sass/ -o ./src/assets/common/css/",
-    "watch:js": "watchify ./src/js/App.js -v -o \"exorcist ./src/assets/bundle.js.map > ./src/assets/bundle.js\" -d",
+    "watch:js": "babel ./src/js -w -d ./src/assets/common/js ",
     "watch:server": "browser-sync start --server ./ --startPath src/assets/",
     "watch": "npm-run-all -p watch:pug watch:css watch:js watch:server",
-
     "release:css": "mkdirp ./dist/common/css && node-sass -c ./src/sass/ -o ./dist/common/css --output-style compressed",
-    "release:js": "cross-env NODE_ENV=production browserify ./src/js/App.js | uglifyjs -c warnings=false -m > ./dist/bundle.js",
+    "release:js": "mkdirp ./dist/common/js && babel ./src/js -d ./dist/common/js",
     "release:clean": "rimraf ./dist",
     "release:copy": "cpx \"./src/assets/**/!(*.js|*.css|*.map|_*.html)\" ./dist/",
     "release:mkdir": "mkdirp ./dist && npm run release:clean && mkdirp ./dist/",
@@ -64,6 +62,7 @@
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-power-assert": "^1.0.0",
     "babel-register": "^6.24.1",
